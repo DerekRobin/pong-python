@@ -26,8 +26,8 @@ class Ball(Turtle):
         self.penup()
         self.speed(0)
         self.goto(0, 0)
-        self.dx = 4
-        self.dy = 4
+        self.dx = 6
+        self.dy = 6
 
     def move(self):
         self.setx(self.xcor() + self.dx)

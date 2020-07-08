@@ -1,6 +1,7 @@
 import turtle
 from pieces import Paddle, Ball, Score
 
+#window setup
 window = turtle.Screen()
 window.title("Pong by Derek Robinson")
 window.bgcolor("black")
@@ -25,10 +26,11 @@ window.onkeypress(paddle_a.move_down, "s")
 window.onkeypress(paddle_b.move_up, "Up")
 window.onkeypress(paddle_b.move_down, "Down")
 
+score_one = 0
+score_two = 0
+
 # Main game loop
 while True:
-    score_one = 0
-    score_two = 0
     window.update()
 
     # Move the ball
@@ -47,14 +49,14 @@ while True:
         ball.goto(0, 0)
         ball.dx *= -1
         score_one += 1
-        pen.clear()
+        score.clear()
         score.update(score_one, score_two)
 
     if ball.xcor() < -390:
         ball.goto(0, 0)
         ball.dx *= -1
         score_two += 1
-        pen.clear()
+        score.clear()
         score.update(score_one, score_two)
 
     # paddle and ball collisions
